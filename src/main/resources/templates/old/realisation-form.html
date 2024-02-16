@@ -1,0 +1,193 @@
+
+  
+
+  <form id="edit_form" th:action="@{/realisation/save}" method="post" enctype="multipart/form-data" th:object="${realisation}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <!--input type="hidden" th:field="*{object_id}" /-->
+    
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="real_id">real_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{real_id}" required class="form-control" id="real_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('real_id')}" th:errors="*{real_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="ssact_id">ssact_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{ssact_id}" required class="form-control" id="ssact_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('ssact_id')}" th:errors="*{ssact_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="activ_id">activ_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{activ_id}" required class="form-control" id="activ_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('activ_id')}" th:errors="*{activ_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="MONTANT_TARIF">MONTANT_TARIF</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{MONTANT_TARIF}" required class="form-control" id="MONTANT_TARIF" />
+          <span class="field-error" th:if="${#fields.hasErrors('MONTANT_TARIF')}" th:errors="*{MONTANT_TARIF}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="STATCODE">STATCODE</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{STATCODE}" required class="form-control" id="STATCODE" />
+          <span class="field-error" th:if="${#fields.hasErrors('STATCODE')}" th:errors="*{STATCODE}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="real_date_debut">real_date_debut</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{real_date_debut}" required class="form-control" id="real_date_debut" />
+          <span class="field-error" th:if="${#fields.hasErrors('real_date_debut')}" th:errors="*{real_date_debut}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="real_date_fin">real_date_fin</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{real_date_fin}" required class="form-control" id="real_date_fin" />
+          <span class="field-error" th:if="${#fields.hasErrors('real_date_fin')}" th:errors="*{real_date_fin}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="real_duree_jours">real_duree_jours</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{real_duree_jours}" required class="form-control" id="real_duree_jours" />
+          <span class="field-error" th:if="${#fields.hasErrors('real_duree_jours')}" th:errors="*{real_duree_jours}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="real_duree_heures">real_duree_heures</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{real_duree_heures}" required class="form-control" id="real_duree_heures" />
+          <span class="field-error" th:if="${#fields.hasErrors('real_duree_heures')}" th:errors="*{real_duree_heures}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="real_nombre_dossiers">real_nombre_dossiers</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{real_nombre_dossiers}" required class="form-control" id="real_nombre_dossiers" />
+          <span class="field-error" th:if="${#fields.hasErrors('real_nombre_dossiers')}" th:errors="*{real_nombre_dossiers}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="canal_assistance_details">canal_assistance_details</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{canal_assistance_details}" required class="form-control" id="canal_assistance_details" />
+          <span class="field-error" th:if="${#fields.hasErrors('canal_assistance_details')}" th:errors="*{canal_assistance_details}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="commentaire">commentaire</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{commentaire}" required class="form-control" id="commentaire" />
+          <span class="field-error" th:if="${#fields.hasErrors('commentaire')}" th:errors="*{commentaire}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="PJ">PJ</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{PJ}" required class="form-control" id="PJ" />
+          <span class="field-error" th:if="${#fields.hasErrors('PJ')}" th:errors="*{PJ}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Matricule">Matricule</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Matricule}" required class="form-control" id="Matricule" />
+          <span class="field-error" th:if="${#fields.hasErrors('Matricule')}" th:errors="*{Matricule}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Assmod_id">Assmod_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Assmod_id}" required class="form-control" id="Assmod_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('Assmod_id')}" th:errors="*{Assmod_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Conv_id">Conv_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Conv_id}" required class="form-control" id="Conv_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('Conv_id')}" th:errors="*{Conv_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Supp_code">Supp_code</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Supp_code}" required class="form-control" id="Supp_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('Supp_code')}" th:errors="*{Supp_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Tarif_code">Tarif_code</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Tarif_code}" required class="form-control" id="Tarif_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('Tarif_code')}" th:errors="*{Tarif_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="MONTANT_TOTAL">MONTANT_TOTAL</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{MONTANT_TOTAL}" required class="form-control" id="MONTANT_TOTAL" />
+          <span class="field-error" th:if="${#fields.hasErrors('MONTANT_TOTAL')}" th:errors="*{MONTANT_TOTAL}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="user_decision">user_decision</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{user_decision}" required class="form-control" id="user_decision" />
+          <span class="field-error" th:if="${#fields.hasErrors('user_decision')}" th:errors="*{user_decision}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="date_decision">date_decision</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{date_decision}" required class="form-control" id="date_decision" />
+          <span class="field-error" th:if="${#fields.hasErrors('date_decision')}" th:errors="*{date_decision}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="motif_decision">motif_decision</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{motif_decision}" required class="form-control" id="motif_decision" />
+          <span class="field-error" th:if="${#fields.hasErrors('motif_decision')}" th:errors="*{motif_decision}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

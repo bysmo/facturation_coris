@@ -1,0 +1,102 @@
+
+    <form id="edit_form" th:action="@{/filiale/save}" method="post" enctype="multipart/form-data" th:object="${filiale}"
+    style="max-width: 550px; margin: 0 auto">
+
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="filiale_code">Code : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{filiale_code}" required class="form-control" id="filiale_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('filiale_code')}" th:errors="*{filiale_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="filiale_libelle">Libellé : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{filiale_libelle}" required class="form-control" id="filiale_libelle" />
+          <span class="field-error" th:if="${#fields.hasErrors('filiale_libelle')}" th:errors="*{filiale_libelle}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="adress_geo">Adresse géo. : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{adress_geo}" required class="form-control" id="adress_geo" />
+          <span class="field-error" th:if="${#fields.hasErrors('adress_geo')}" th:errors="*{adress_geo}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="num_fisc">IFU : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{num_fisc}" required class="form-control" id="num_fisc" />
+          <span class="field-error" th:if="${#fields.hasErrors('num_fisc')}" th:errors="*{num_fisc}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="boite_postale">Boite Postale : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{boite_postale}" required class="form-control" id="boite_postale" />
+          <span class="field-error" th:if="${#fields.hasErrors('boite_postale')}" th:errors="*{boite_postale}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="telephone">Téléphone : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{telephone}" required class="form-control" id="telephone" />
+          <span class="field-error" th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="registre_com">RCCM : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{registre_com}" required class="form-control" id="registre_com" />
+          <span class="field-error" th:if="${#fields.hasErrors('registre_com')}" th:errors="*{registre_com}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="pays">Pays : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{pays}" required class="form-control" id="pays" />
+          <span class="field-error" th:if="${#fields.hasErrors('pays')}" th:errors="*{pays}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="ville">Ville : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{ville}" required class="form-control" id="ville" />
+          <span class="field-error" th:if="${#fields.hasErrors('ville')}" th:errors="*{ville}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="signature">Signature : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{signature}" required class="form-control" id="signature" />
+          <span class="field-error" th:if="${#fields.hasErrors('signature')}" th:errors="*{signature}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="nom_signataire">Nom signataire : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{nom_signataire}" required class="form-control" id="nom_signataire" />
+          <span class="field-error" th:if="${#fields.hasErrors('nom_signataire')}" th:errors="*{nom_signataire}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

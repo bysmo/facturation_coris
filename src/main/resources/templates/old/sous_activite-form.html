@@ -1,0 +1,55 @@
+
+  
+
+  <form id="edit_form" th:action="@{/sous_activite/save}" method="post" enctype="multipart/form-data" th:object="${sous_activite}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="activ_id">Activité : </label>
+      <div class="col-sm-9">
+        <select th:field="*{activ_id}" required class="form-control" id="activ_id" >
+          <option value=""> -- </option>
+          <option th:each="act : ${activites}"
+                  th:text="${act.activ_code} + ' - ' +${act.activ_libelle}"
+                  th:value="${act.activ_id}">
+          </option>
+      </select>
+        <span class="field-error" th:if="${#fields.hasErrors('activ_id')}" th:errors="*{activ_id}">Name Error</span>
+      </div>
+    </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="ssact_code">Code : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{ssact_code}" required class="form-control" id="ssact_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('ssact_code')}" th:errors="*{ssact_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="ssact_libelle">Libellé : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{ssact_libelle}" required class="form-control" id="ssact_libelle" />
+          <span class="field-error" th:if="${#fields.hasErrors('ssact_libelle')}" th:errors="*{ssact_libelle}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="ssact_description">Description : </label>
+        <div class="col-sm-9">
+          <textarea type="text" th:field="*{ssact_description}" required class="form-control" id="ssact_description" > </textarea>
+          <span class="field-error" th:if="${#fields.hasErrors('ssact_description')}" th:errors="*{ssact_description}">Name Error</span>
+        </div>
+      </div>
+      
+      
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

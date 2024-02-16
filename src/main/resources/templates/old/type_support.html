@@ -1,0 +1,67 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des type_supports
+</div>
+<div>
+<button id="add_new_data" data-href="/type_support/new" data-titre="Nouveau type de support"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter un type de support
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">Code</th>
+        
+        <th scope="col">Libellé</th>
+        
+        <th scope="col">Contenu</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="type_support : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${type_support.supp_code}">supp_code</td>
+        
+        <td th:text="${type_support.supp_libelle}">supp_libelle</td>
+        
+        <td th:text="${type_support.supp_contenu}">supp_contenu</td>
+        
+        <td>
+          <a th:href="@{'/type_support/' + ${type_support.supp_code}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/type_support/delete/' + ${type_support.supp_code}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

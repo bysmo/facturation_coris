@@ -1,0 +1,54 @@
+
+  <form id="edit_form" th:action="@{/direction/save}" method="post" enctype="multipart/form-data" th:object="${direction}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <!--input type="hidden" th:field="*{object_id}" /-->
+          
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Matricule_directeur">Directeur : </label>
+        <div class="col-sm-9">
+          
+          <select th:field="*{Matricule_directeur}" required class="form-control" id="Matricule_directeur" >
+            <option value=""> -- </option>
+            <option th:each="pers : ${personnes}"
+                    th:text="${pers.matricule} + ' - ' +${pers.pers_nom} + ' ' + ${pers.pers_prenom}"
+                    th:value="${pers.matricule}">
+            </option>
+        </select>
+          <span class="field-error" th:if="${#fields.hasErrors('Matricule_directeur')}" th:errors="*{Matricule_directeur}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="direct_code">Code : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{direct_code}" required class="form-control" id="direct_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('direct_code')}" th:errors="*{direct_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="direct_libelle">Libellé : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{direct_libelle}" required class="form-control" id="direct_libelle" />
+          <span class="field-error" th:if="${#fields.hasErrors('direct_libelle')}" th:errors="*{direct_libelle}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="direct_description">Description :</label>
+        <div class="col-sm-9">
+          <textarea th:field="*{direct_description}" required class="form-control" id="direct_description" ></textarea>
+          <span class="field-error" th:if="${#fields.hasErrors('direct_description')}" th:errors="*{direct_description}">Name Error</span>
+        </div>
+      </div>
+      
+      
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+  </form>
+
+  <script th:src="@{/js/coris_form.js}"></script>
+

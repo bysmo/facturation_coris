@@ -1,0 +1,71 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des affectations
+</div>
+<div>
+<button id="add_new_data" data-href="@{affectation/new}" data-titre="affectation - Nouvel enregistrement"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div >
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">Real_id</th>
+        
+        <th scope="col">Filiale_id</th>
+        
+        <th scope="col">cle_repartition</th>
+        
+        <th scope="col">PJ_filiale</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="affectation : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${affectation.Real_id}">Real_id</td>
+        
+        <td th:text="${affectation.Filiale_id}">Filiale_id</td>
+        
+        <td th:text="${affectation.cle_repartition}">cle_repartition</td>
+        
+        <td th:text="${affectation.PJ_filiale}">PJ_filiale</td>
+        
+        <td>
+          <a th:href="@{'/affectation/' + ${affectation.Real_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/affectation/delete/' + ${affectation.Real_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

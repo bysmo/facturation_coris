@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Coris Facturation | Holding </title>-->
+    <link rel="stylesheet" href="style2.css" th:href="@{/css/style2.css}">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">Coris Facturation</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">CodingLab</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li>
+            <a href="#">Réalisations</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a th:href="@{'/activite/new'}">Saisies</a></li>
+              <li><a th:href="@{'/activite/validate'}">Validations</a></li>
+              <li><a th:href="@{'/activite/old'}">Historique</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+            <a href="#">Paramétrages</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a th:href="@{'/direction/all'}">Directions</a></li>
+              <li><a th:href="@{'/departement/all'}">Départements</a></li>
+              <li><a th:href="@{'/filiale/all'}">Filiales</a></li>
+              <li><a th:href="@{'/personnel/all'}">Personnel</a></li>
+            </ul>
+			<ul class="htmlCss-sub-menu sub-menu">
+              <li><a th:href="@{'/activite/all'}">Activités</a></li>
+              <li><a th:href="@{'/sous_activite/all'}">Sous-activités</a></li>
+              <li><a th:href="@{'/mode_assistance/all'}">Modes d'assistance</a></li>
+              <li><a th:href="@{'/type_conv/all'}">Types de conventions</a></li>
+              <li><a th:href="@{'/type_support/all'}">Types de support</a></li>
+              <li><a th:href="@{'/canal_support/all'}">Canaux de support</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+            <a href="#">Sécurité</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a th:href="@{'/role/all'}">Rôles</a></li>
+              <li><a th:href="@{'/niveau/all'}">Niveaux d'accès</a></li>
+              <li><a th:href="@{'/users/all'}">Utilisateurs</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+            <a href="#">Mon compte</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a th:href="@{'/account/me'}">Mes informations</a></li>
+              <li><a th:href="@{'/account/change-pswd'}">Changer de mot de passe</a></li>
+              <li><a th:href="@{'/logout'}">Se déconnecter</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

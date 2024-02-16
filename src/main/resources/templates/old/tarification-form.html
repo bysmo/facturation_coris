@@ -1,0 +1,49 @@
+
+  
+
+  <form id="edit_form" th:action="@{/tarification/save}" method="post" enctype="multipart/form-data" th:object="${tarification}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <!--input type="hidden" th:field="*{object_id}" /-->
+    
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="activ_id">Activité : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{activ_id}" required class="form-control" id="activ_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('activ_id')}" th:errors="*{activ_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="supp_code">Type support : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{supp_code}" required class="form-control" id="supp_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('supp_code')}" th:errors="*{supp_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="tarif_code">Type tarif : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{tarif_code}" required class="form-control" id="tarif_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('tarif_code')}" th:errors="*{tarif_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="MONTANT_TARIF">Montant : </label>
+        <div class="col-sm-9">
+          <input type="number" th:field="*{MONTANT_TARIF}" required class="form-control" id="MONTANT_TARIF" />
+          <span class="field-error" th:if="${#fields.hasErrors('MONTANT_TARIF')}" th:errors="*{MONTANT_TARIF}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <title th:text="#{label.pages.home.title}">home</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/home.html}" th:text="#{label.pages.home.title}">home</a>
+        </div>
+        <div class="">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/belrbeZ/UserManager">Visit on GitHub</a></li>
+                <li sec:authorize="isAuthenticated()" ><a th:href="@{/logout}" th:text="#{label.pages.logout}">logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <a class="btn btn-default" th:href="@{/api}" th:text="#{label.pages.api}">REST API with Swagger 2.0</a>
+    <br/> <br/>
+    <a th:href="@{/user-list}" th:text="#{label.pages.users.message}">View logged in users</a>
+    <br/>
+    <a th:href="@{/login}" th:text="#{label.form.loginTitle}">LOGIN</a>
+</div>
+
+</body>
+</html>

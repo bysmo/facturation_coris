@@ -1,0 +1,41 @@
+
+  
+
+  <form id="edit_form" th:action="@{/type_tarif/save}" method="post" enctype="multipart/form-data" th:object="${type_tarif}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <!--input type="hidden" th:field="*{object_id}" /-->
+    
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="tarif_code">Code : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{tarif_code}" required class="form-control" id="tarif_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('tarif_code')}" th:errors="*{tarif_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="tarif_libelle">Libellé : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{tarif_libelle}" required class="form-control" id="tarif_libelle" />
+          <span class="field-error" th:if="${#fields.hasErrors('tarif_libelle')}" th:errors="*{tarif_libelle}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="tarif_description">Description : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{tarif_description}" required class="form-control" id="tarif_description" />
+          <span class="field-error" th:if="${#fields.hasErrors('tarif_description')}" th:errors="*{tarif_description}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

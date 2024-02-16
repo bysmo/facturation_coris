@@ -1,0 +1,41 @@
+
+  
+
+  <form id="edit_form" th:action="@{/params/save}" method="post" enctype="multipart/form-data" th:object="${params}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <!--input type="hidden" th:field="*{object_id}" /-->
+    
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="PARAMCODE">Code : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{PARAMCODE}" required class="form-control" id="PARAMCODE" />
+          <span class="field-error" th:if="${#fields.hasErrors('PARAMCODE')}" th:errors="*{PARAMCODE}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="PARAMVALEUR">Valeur : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{PARAMVALEUR}" required class="form-control" id="PARAMVALEUR" />
+          <span class="field-error" th:if="${#fields.hasErrors('PARAMVALEUR')}" th:errors="*{PARAMVALEUR}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="PARAMDESCRIPTION">Description</label>
+        <div class="col-sm-9">
+          <textarea  th:field="*{PARAMDESCRIPTION}" required class="form-control" id="PARAMDESCRIPTION" > </textarea>
+          <span class="field-error" th:if="${#fields.hasErrors('PARAMDESCRIPTION')}" th:errors="*{PARAMDESCRIPTION}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

@@ -1,0 +1,49 @@
+
+  
+
+  <form id="edit_form" th:action="@{/affectation/save}" method="post" enctype="multipart/form-data" th:object="${affectation}"
+    style="max-width: 550px; margin: 0 auto">
+
+    <!--input type="hidden" th:field="*{object_id}" /-->
+    
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Real_id">Real_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Real_id}" required class="form-control" id="Real_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('Real_id')}" th:errors="*{Real_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="Filiale_id">Filiale_id</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{Filiale_id}" required class="form-control" id="Filiale_id" />
+          <span class="field-error" th:if="${#fields.hasErrors('Filiale_id')}" th:errors="*{Filiale_id}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="cle_repartition">cle_repartition</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{cle_repartition}" required class="form-control" id="cle_repartition" />
+          <span class="field-error" th:if="${#fields.hasErrors('cle_repartition')}" th:errors="*{cle_repartition}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="PJ_filiale">PJ_filiale</label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{PJ_filiale}" required class="form-control" id="PJ_filiale" />
+          <span class="field-error" th:if="${#fields.hasErrors('PJ_filiale')}" th:errors="*{PJ_filiale}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+

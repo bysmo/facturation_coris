@@ -1,0 +1,107 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des utilisateurs
+</div>
+<div>
+<button id="add_new_data" data-href="/utilisateur/new" data-titre="Nouvel utilisateur"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter un nouvel utilisateur
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">ID</th>
+        
+        <th scope="col">Matricule</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rôle</th>
+                
+        <th scope="col">Actif</th>
+        
+        <th scope="col">Verrou?</th>
+        
+        <th scope="col">UFT</th>
+        
+        
+        <th scope="col">Dernière connexion</th>
+        
+        <th scope="col">Pswd Expire le</th>
+        
+        <th scope="col">Pswd actif depuis</th>
+        
+        <th scope="col">Première connexion</th>
+        
+        <th scope="col">Temps de verrou</th>
+        
+                
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="utilisateur : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${utilisateur.user_id}">user_id</td>
+        
+        <td th:text="${utilisateur.matricule}">matricule</td>
+
+        <td th:text="${utilisateur.user_email}">user_email</td>
+
+        <td th:text="${utilisateur.role_id}">role_id</td>
+
+                
+        <td th:text="${utilisateur.user_active}">user_active</td>
+        
+        <td th:text="${utilisateur.user_locked}">user_locked</td>
+        
+        <td th:text="${utilisateur.user_failed_tries}">user_failed_tries</td>
+
+        
+        
+        <td th:text="${utilisateur.user_last_login_time}">user_last_login_time</td>
+        
+        <td th:text="${utilisateur.password_time_to_live}">password_time_to_live</td>
+        
+        <td th:text="${utilisateur.password_set_time}">password_set_time</td>
+        
+        <td th:text="${utilisateur.has_first_logged}">has_first_logged</td>
+        
+        <td th:text="${utilisateur.user_locked_time}">user_locked_time</td>
+        
+        <td>
+          <a th:href="@{'/utilisateur/' + ${utilisateur.user_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/utilisateur/delete/' + ${utilisateur.user_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

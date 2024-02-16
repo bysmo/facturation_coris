@@ -1,0 +1,101 @@
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des filiales
+</div>
+<div>
+<button id="add_new_data" data-href="/filiale/new" data-titre="Nouveblle filiale"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter une filiale
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">ID</th>
+        
+        <th scope="col">Code</th>
+        
+        <th scope="col">Libellé</th>
+        
+        <th scope="col">Adresse géo.</th>
+        
+        <th scope="col">IFU</th>
+        
+        <th scope="col">Boite postale</th>
+        
+        <th scope="col">Téléphone</th>
+        
+        <th scope="col">RCCM</th>
+        
+        <th scope="col">Pays</th>
+        
+        <th scope="col">Ville</th>
+        
+        <th scope="col">Signature</th>
+        
+        <th scope="col">Signataire</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="filiale : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${filiale.filiale_id}">filiale_id</td>
+        
+        <td th:text="${filiale.filiale_code}">filiale_code</td>
+        
+        <td th:text="${filiale.filiale_libelle}">filiale_libelle</td>
+        
+        <td th:text="${filiale.adress_geo}">adress_geo</td>
+        
+        <td th:text="${filiale.num_fisc}">num_fisc</td>
+        
+        <td th:text="${filiale.boite_postale}">boite_postale</td>
+        
+        <td th:text="${filiale.telephone}">telephone</td>
+        
+        <td th:text="${filiale.registre_com}">registre_com</td>
+        
+        <td th:text="${filiale.pays}">pays</td>
+        
+        <td th:text="${filiale.ville}">ville</td>
+        
+        <td th:text="${filiale.signature}">signature</td>
+        
+        <td th:text="${filiale.nom_signataire}">nom_signataire</td>
+        
+        <td>
+          <a th:href="@{'/filiale/' + ${filiale.filiale_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/filiale/delete/' + ${filiale.filiale_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

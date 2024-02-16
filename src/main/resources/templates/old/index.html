@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Coris Facturation | Holding </title>
+    <!-- Boxicons CDN Link -->
+    <!--link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'-->
+    <link href="js/jquery-ui/jquery-ui.min.css" th:href="@{/js/jquery-ui/jquery-ui.min.css}" rel="stylesheet">
+    <link href="js/DataTables/datatables.min.css" th:href="@{/js/DataTables/datatables.min.css}" rel="stylesheet">
+    <link href="js/bootstrap.min.css" th:href="@{/js/bootstrap.min.css}" rel="stylesheet">
+ 
+<link rel="stylesheet" href="css/style2.css" th:href="@{/css/style2.css}">
+<!--link rel="stylesheet" href="css/table_style.css" th:href="@{/css/table_style.css}"-->
+
+   </head>
+<body>
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="/">Coris Facturation</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">Coris Holding</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+
+          <li>
+            <a href="#">CIP</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a class="ajax_lnk" th:href="@{'/CIP/upload'}">Uploader les fichiers</a></li>
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="#">Réalisations</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a class="ajax_lnk" th:href="@{'/realisation/all'}">Saisies</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/realisation/workflow'}">Validations</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/realisation/old'}">Historique</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+            <a href="#">Paramétrages</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a class="ajax_lnk" th:href="@{'/direction/all'}">Directions</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/filiale/all'}">Filiales</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/personnel/all'}">Personnel</a></li>
+              <li><a href="#"> ---------------------- </a></li>
+              <li><a class="ajax_lnk" th:href="@{'/activite/all'}">Activités</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/sous_activite/all'}">Sous-activités</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/mode_assistance/all'}">Modes d'assistance</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/type_conv/all'}">Types de conventions</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/type_support/all'}">Types de support</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/type_tarif/all'}">Types de tarifs</a></li>
+              <li><a href="#"> ---------------------- </a></li>
+              <li><a class="ajax_lnk" th:href="@{'/tarification/all'}">Tarification des activités</a></li>
+              <li><a href="#"> ---------------------- </a></li>
+              <li><a class="ajax_lnk" th:href="@{'/params/all'}">Autres paramètres</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+            <a href="#">Sécurité</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a class="ajax_lnk" th:href="@{'/role/all'}">Rôles</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/niveau/all'}">Niveaux d'accès</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/utilisateur/all'}">Utilisateurs</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+            <a href="#">Mon compte</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a class="ajax_lnk" th:href="@{'/account/me'}">Mes informations</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/account/change-pswd'}">Changer de mot de passe</a></li>
+              <li><a class="ajax_lnk" th:href="@{'/logout'}">Se déconnecter</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
+  role="alert">
+  <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+
+  <main id="main-container">
+  </main>
+</body>
+<footer>
+  
+<script src="js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="js/jquery-ui/jquery-ui.min.js" th:src="@{/js/jquery-ui/jquery-ui.min.js}"></script>
+<script src="js/DataTables/datatables.min.js" th:src="@{/js/DataTables/datatables.min.js}"></script>
+<script src="js/bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+
+</footer>
+</html>

@@ -1,0 +1,63 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des rôles
+</div>
+<div>
+<button id="add_new_data" data-href="/role/new" data-titre="Nouveau rôle"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter un nouveau rôle
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">ID</th>
+        
+        <th scope="col">Code</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="role : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${role.role_id}">role_id</td>
+        
+        <td th:text="${role.role_name}">role_name</td>
+        
+        <td>
+          <a th:href="@{'/role/' + ${role.role_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/role/delete/' + ${role.role_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

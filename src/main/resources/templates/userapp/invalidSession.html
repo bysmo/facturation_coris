@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <title th:text="#{label.pages.home.title}">home</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/home.html}" th:text="#{label.pages.home.title}">home</a>
+        </div>
+        <div class="">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/belrbeZ/UserManager">Visit on GitHub</a></li>
+                <li sec:authorize="isAuthenticated()" ><a th:href="@{/logout}" th:text="#{label.pages.logout}">logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="alert alert-danger" th:text="#{message.sessionExpired}">expired</h1>
+    <a class="btn btn-primary" th:href="@{/login}" th:text="#{label.form.loginLink}">login</a>
+</div>
+</body>
+</html>

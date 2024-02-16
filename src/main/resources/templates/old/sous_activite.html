@@ -1,0 +1,75 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des sous activités
+</div>
+<div>
+<button id="add_new_data" data-href="/sous_activite/new" data-titre="Nouvelle sous activité"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter une sous-activité
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">ID</th>
+        
+        <th scope="col">Code</th>
+        
+        <th scope="col">Libellé</th>
+        
+        <th scope="col">Description</th>
+        
+        <th scope="col">Activité</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="sous_activite : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${sous_activite.ssact_id}">ssact_id</td>
+        
+        <td th:text="${sous_activite.ssact_code}">ssact_code</td>
+        
+        <td th:text="${sous_activite.ssact_libelle}">ssact_libelle</td>
+        
+        <td th:text="${sous_activite.ssact_description}">ssact_description</td>
+        
+        <td th:text="${sous_activite.activ_id}">activ_id</td>
+        
+        <td>
+          <a th:href="@{'/sous_activite/' + ${sous_activite.ssact_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/sous_activite/delete/' + ${sous_activite.ssact_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

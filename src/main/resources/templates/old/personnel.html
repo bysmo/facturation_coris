@@ -1,0 +1,83 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion du personnel
+</div>
+<div>
+<button id="add_new_data" data-href="/personnel/new" data-titre="Nouveau membre du personnel"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter un membre du personnel
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">Matricule</th>
+        
+        <th scope="col">Direction</th>
+        
+        <th scope="col">Nom</th>
+        
+        <th scope="col">Prénoms</th>
+        
+        <th scope="col">Email</th>
+        
+        <th scope="col">Date intég.</th>
+        
+        <th scope="col">Type support</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="personnel : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${personnel.matricule}">matricule</td>
+        
+        <td th:text="${personnel.direct_id}">direct_id</td>
+        
+        <td th:text="${personnel.pers_nom}">pers_nom</td>
+        
+        <td th:text="${personnel.pers_prenom}">pers_prenom</td>
+        
+        <td th:text="${personnel.pers_email}">pers_email</td>
+        
+        <td th:text="${personnel.pers_date_integration}">pers_date_integration</td>
+        
+        <td th:text="${personnel.Supp_code}">Supp_code</td>
+        
+        <td>
+          <a th:href="@{'/personnel/' + ${personnel.matricule}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/personnel/delete/' + ${personnel.matricule}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

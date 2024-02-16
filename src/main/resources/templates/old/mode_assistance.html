@@ -1,0 +1,75 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des modes d'assistance
+</div>
+<div>
+<button id="add_new_data" data-href="/mode_assistance/new" data-titre="Nouvel mode d'assistance"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter un mode d'assistance
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">ID</th>
+        
+        <th scope="col">Code</th>
+        
+        <th scope="col">Libellé</th>
+        
+        <th scope="col">Description</th>
+        
+        <th scope="col">Canal</th>
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="mode_assistance : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${mode_assistance.assmod_id}">assmod_id</td>
+        
+        <td th:text="${mode_assistance.assmod_code}">assmod_code</td>
+        
+        <td th:text="${mode_assistance.assmod_libelle}">assmod_libelle</td>
+        
+        <td th:text="${mode_assistance.assmod_description}">assmod_description</td>
+        
+        <td th:text="${mode_assistance.assmod_canal}">assmod_canal</td>
+        
+        <td>
+          <a th:href="@{'/mode_assistance/' + ${mode_assistance.assmod_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/mode_assistance/delete/' + ${mode_assistance.assmod_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

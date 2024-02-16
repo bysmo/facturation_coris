@@ -1,0 +1,101 @@
+
+
+<div class="container-table">
+
+<div class="title_feature" >
+  Gestion des réalisations
+</div>
+<div>
+<button id="add_new_data" data-href="/realisation/new" data-titre="Nouvelle réalisation"  
+data-width="1200" data-height="500"
+class="btn btn-primary mb-3">
+  <span class="glyphicon glyphicon-plus">
+  </span> Ajouter une nouvelle réalisation
+</button>
+</div>
+
+
+<div id="form_zone"></div>
+
+<div>
+  <table id="table_data" class=" table table-triped table-hover table-responsive-xl">
+    <thead class="thead-light">
+      <tr>
+
+      <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+			</th>
+      
+        <th scope="col">ID</th>
+
+        <th scope="col">Personnel</th>
+
+        <th scope="col">Activité</th>
+        
+        <th scope="col">Sous act.</th>
+        
+        <th scope="col">Mode assistance</th>
+        
+        <th scope="col">Convention</th>
+        
+        <th scope="col">Type support</th>
+                
+        <th scope="col">Début</th>
+        
+        <th scope="col">Fin</th>
+
+        <th scope="col">Statut</th>
+                
+        <th scope="col">Commentaires</th>
+        
+        
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="realisation : ${datas}">
+      <td><input type="checkbox"/></td>
+       
+        <td th:text="${realisation.real_id}">real_id</td>
+
+        <td th:text="${realisation.Matricule}">Matricule</td>
+
+        <td th:text="${realisation.activ_id}">activ_id</td>
+
+        <td th:text="${realisation.ssact_id}">ssact_id</td>
+        
+        <td th:text="${realisation.Assmod_id}">Assmod_id</td>
+        
+        <td th:text="${realisation.Conv_id}">Conv_id</td>
+        
+        <td th:text="${realisation.Supp_code}">Supp_code</td>
+                
+        <td th:text="${realisation.real_date_debut}">real_date_debut</td>
+        
+        <td th:text="${realisation.real_date_fin}">real_date_fin</td>
+
+        <td th:text="${realisation.STATCODE}">STATCODE</td>
+
+        <td th:text="${realisation.commentaire}">commentaire</td>
+        
+             
+        <td>
+          <a th:href="@{'/realisation/' + ${realisation.real_id}}" title="Modifier">
+          <i class="btn btn-edit"></i></a>
+           
+          <a th:href="@{'/realisation/delete/' + ${realisation.real_id}}" title="Supprimer"> 
+          <i class="btn btn-delete"></i></a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script th:src="@{/js/coris_tables.js}"></script>
+ 
+

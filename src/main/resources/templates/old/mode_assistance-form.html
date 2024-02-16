@@ -1,0 +1,48 @@
+
+  
+
+  <form id="edit_form" th:action="@{/mode_assistance/save}" method="post" enctype="multipart/form-data" th:object="${mode_assistance}"
+    style="max-width: 550px; margin: 0 auto">
+
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="assmod_code">Code : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{assmod_code}" required class="form-control" id="assmod_code" />
+          <span class="field-error" th:if="${#fields.hasErrors('assmod_code')}" th:errors="*{assmod_code}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="assmod_libelle">Libellé : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{assmod_libelle}" required class="form-control" id="assmod_libelle" />
+          <span class="field-error" th:if="${#fields.hasErrors('assmod_libelle')}" th:errors="*{assmod_libelle}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="assmod_description">Description : </label>
+        <div class="col-sm-9">
+          <textarea  th:field="*{assmod_description}" required class="form-control" id="assmod_description"> </textarea>
+          <span class="field-error" th:if="${#fields.hasErrors('assmod_description')}" th:errors="*{assmod_description}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="assmod_canal">Canal : </label>
+        <div class="col-sm-9">
+          <input type="text" th:field="*{assmod_canal}" required class="form-control" id="assmod_canal" />
+          <span class="field-error" th:if="${#fields.hasErrors('assmod_canal')}" th:errors="*{assmod_canal}">Name Error</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm mr-2" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/coris_form.js}"></script>
+
